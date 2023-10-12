@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"os"
 )
@@ -33,8 +32,4 @@ func GetWords() []string {
 func GetWord(s []string) string {
 	word := s[rand.Intn(len(s))]
 	return word
-}
-
-func main() {
-	fmt.Print(GetWord(GetWords()))
 }
