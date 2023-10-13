@@ -9,14 +9,14 @@ import (
 func main() {
 	fonctions.Clear()
 	compteur := 10
-	word := GetWord()
+	word := fonctions.GetWord(fonctions.GetWords())
 	free := word[rand.Intn(len(word)-1)]
-	tofind := [len(word)]string{}
+	tofind := []byte{}
 	for i := 0; i < len(word)-1; i++ {
 		if word[i] == free {
-			tofind[i] = word[i]
+			tofind = append(tofind, word[i])
 		} else {
-			tofind[i] = "_"
+			tofind = append(tofind, '_')
 		}
 	}
 
