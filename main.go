@@ -1,12 +1,13 @@
 package main
 
 import (
+	"Hangman/fonctions"
 	"fmt"
 	"math/rand"
 )
 
 func main() {
-	fonction.Clear()
+	fonctions.Clear()
 	compteur := 10
 	word := GetWord()
 	free := word[rand.Intn(len(word)-1)]
