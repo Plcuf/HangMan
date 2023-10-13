@@ -6,16 +6,13 @@ import (
 )
 
 func GetWords() []string {
-	file, err := os.OpenFile("noms_monstres.txt", os.O_RDONLY, 0644)
+	file, err := os.OpenFile("textes/noms_monstres.txt", os.O_RDONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
 
 	data, err := os.ReadFile(file.Name())
-	if err != nil {
-		panic(err)
-	}
 
 	slice := []string{}
 	word := ""
