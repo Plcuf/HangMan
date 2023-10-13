@@ -9,14 +9,13 @@ Chauve-souris
 Citrouille
 Goule
 Squelette
-Chauve-souris
 Effrayant
 Terrifiant
 Horrifiant
-Épouvantable
+Epouvantable
 Monstrueux
 Mortel
 Mort
 Mort-vivant
 Mortuaire
-Mortifère
+Mortifere

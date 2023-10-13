@@ -8,7 +8,7 @@ func Scan() string {
 	fmt.Scanln(&answer)
 	valid := true
 	for _, c := range answer {
-		if !(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z') {
+		if !(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z') && !(c == '-') {
 			valid = false
 		}
 	}
@@ -16,6 +16,7 @@ func Scan() string {
 		if len(answer) > 1 {
 			return answer
 		} else {
+			fmt.Println("test")
 			return answer
 		}
 	} else {
