@@ -1,4 +1,4 @@
-package main
+package fonctions
 
 import (
 	"math/rand"
@@ -13,6 +13,9 @@ func GetWords() []string {
 	defer file.Close()
 
 	data, err := os.ReadFile(file.Name())
+	if err != nil {
+		panic(err)
+	}
 
 	slice := []string{}
 	word := ""
