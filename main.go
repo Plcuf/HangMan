@@ -8,10 +8,18 @@ import (
 
 func main() {
 	compteur := 10
-	word := fonctions.GetWord(fonctions.GetWords())
+	brokenword := fonctions.GetWord(fonctions.GetWords())
+	word := ""
+	//alreadysaid := ""
+
+	for i := 0; i < len(brokenword)-1; i++ {
+		word += string(brokenword[i])
+	}
+
 	free := word[rand.Intn(len(word)-1)]
 	tofind := []string{}
-	for i := 0; i < len(word)-1; i++ {
+
+	for i := 0; i < len(word); i++ {
 		if word[i] == free {
 			tofind = append(tofind, string(word[i]))
 		} else {
@@ -20,9 +28,9 @@ func main() {
 	}
 
 	for compteur > 0 {
-		//fonctions.Clear()
-		//Affichage(compteur)
-		fmt.Println(tofind)
+		fonctions.Clear()
+		fonctions.AffichagePendu(10 - compteur)
+		fmt.Println(tofind, " ", compteur, "ꨄ")
 		fmt.Println(word)
 
 		scan := fonctions.Scan()
@@ -30,7 +38,7 @@ func main() {
 		remaining := 0
 
 		if len(scan) < 2 {
-			for i := 0; i < len(word)-1; i++ {
+			for i := 0; i < len(word); i++ {
 				if scan == string(word[i]) {
 					tofind[i] = scan
 					exist = true
@@ -45,15 +53,10 @@ func main() {
 				fonctions.Win()
 			}
 		} else {
-			fmt.Println(scan)
-			fmt.Println(len(scan))
-			fmt.Print(word)
-			//fmt.Println(len(word))
 			if scan == word {
-				fmt.Println("sinon okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 				fonctions.Win()
 			} else {
-				compteur += 2
+				compteur -= 2
 			}
 		}
 	}

@@ -19,7 +19,7 @@ func Clear() {
 }
 
 func AffichagePendu(ligne int) {
-	file, err := os.ReadFile("../textes/hangman.txt")
+	file, err := os.ReadFile("textes/hangman.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -30,35 +30,35 @@ func AffichagePendu(ligne int) {
 	b := 0
 	start := 0
 	switch ligne {
-	case 1:
+	case 0:
 		start = 0
-		b = 16
+		b = 21
+	case 1:
+		start = 21
+		b = 64
 	case 2:
-		start = 17
+		start = 86
 		b = 64
 	case 3:
-		start = 82
+		start = 151
 		b = 64
 	case 4:
-		start = 147
+		start = 217
 		b = 64
 	case 5:
-		start = 213
+		start = 281
 		b = 64
 	case 6:
-		start = 277
+		start = 346
 		b = 64
 	case 7:
-		start = 342
+		start = 411
 		b = 64
 	case 8:
-		start = 407
+		start = 475
 		b = 64
 	case 9:
-		start = 471
-		b = 64
-	case 10:
-		start = 536
+		start = 540
 		b = 64
 	}
 
