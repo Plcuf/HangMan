@@ -4,18 +4,26 @@ import (
 	"Hangman/fonctions"
 	"fmt"
 	"math/rand"
+	"strings"
+	"time"
 )
 
 func main() {
+	fmt.Println("1 - ")
+	game()
+}
+
+func game() {
 	compteur := 10
 	brokenword := fonctions.GetWord(fonctions.GetWords())
 	word := ""
-	//alreadysaid := ""
+	alreadysaid := []string{}
 
 	for i := 0; i < len(brokenword)-1; i++ {
 		word += string(brokenword[i])
 	}
 
+	brokenword = strings.ToLower(brokenword)
 	free := word[rand.Intn(len(word)-1)]
 	tofind := []string{}
 
@@ -31,16 +39,28 @@ func main() {
 		fonctions.Clear()
 		fonctions.AffichagePendu(10 - compteur)
 		fmt.Println(tofind, " ", compteur, "ꨄ")
-		fmt.Println(word)
+		fmt.Println(alreadysaid)
 
 		scan := fonctions.Scan()
 		exist := false
 		remaining := 0
+		insaid := true
 
 		if len(scan) < 2 {
+			for i := 0; i < len(alreadysaid); i++ {
+				if scan == alreadysaid[i] {
+					fmt.Println("you already said this letter")
+					time.Sleep(1 * time.Second)
+					insaid = false
+				}
+			}
+			if insaid == true {
+				alreadysaid = append(alreadysaid, scan)
+			}
+			insaid = false
 			for i := 0; i < len(word); i++ {
-				if scan == string(word[i]) {
-					tofind[i] = scan
+				if scan == string(brokenword[i]) {
+					tofind[i] = string(brokenword[i])
 					exist = true
 				} else if tofind[i] == "_" {
 					remaining++
