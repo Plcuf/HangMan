@@ -55,7 +55,7 @@ func AffichagePendu(ligne int) {
 		start = 411
 		b = 64
 	case 8:
-		start = 475
+		start = 476
 		b = 64
 	case 9:
 		start = 540
