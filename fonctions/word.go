@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
-	"strings"
 )
 
 func GetWords() []string {
@@ -25,7 +24,7 @@ func GetWords() []string {
 	for _, c := range data {
 		c := string(c)
 		if c == "\n" {
-			slice = append(slice, strings.ToLower(word))
+			slice = append(slice, word)
 			word = ""
 		} else {
 			word = word + c
