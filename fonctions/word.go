@@ -1,6 +1,7 @@
 package fonctions
 
 import (
+	"fmt"
 	"math/rand"
 	"os"
 )
@@ -13,23 +14,28 @@ func GetWords() []string {
 	defer file.Close()
 
 	data, err := os.ReadFile(file.Name())
+	if err != nil {
+		panic(err)
+	}
 
 	slice := []string{}
 	word := ""
 
 	for _, c := range data {
-		if c == '\n' {
+		c := string(c)
+		if c == "\n" {
 			slice = append(slice, word)
 			word = ""
 		} else {
-			word = word + string(c)
+			word = word + c
 		}
 	}
-
 	return slice
 }
 
 func GetWord(s []string) string {
 	word := s[rand.Intn(len(s))]
+	fmt.Println(word)
+	fmt.Println(len(word))
 	return word
 }

@@ -38,7 +38,7 @@ func main() {
 					remaining++
 				}
 			}
-			if exist == false {
+			if !exist {
 				compteur--
 			}
 			if remaining == 0 {
@@ -48,7 +48,7 @@ func main() {
 			fmt.Println(scan)
 			fmt.Println(len(scan))
 			fmt.Print(word)
-			fmt.Println("AB")
+			//fmt.Println(len(word))
 			if scan == word {
 				fmt.Println("sinon okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
 				fonctions.Win()

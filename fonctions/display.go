@@ -70,5 +70,5 @@ func AffichagePendu(ligne int) {
 		panic(err)
 	}
 
-	fmt.Println("%s\n", buf)
+	fmt.Printf("%s\n", buf)
 }
