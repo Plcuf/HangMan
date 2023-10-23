@@ -31,7 +31,6 @@ func main() {
 		fonctions.Clear()
 		fonctions.AffichagePendu(10 - compteur)
 		fmt.Println(tofind, " ", compteur, "ꨄ")
-		fmt.Println(word)
 
 		scan := fonctions.Scan()
 		exist := false
