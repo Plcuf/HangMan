@@ -7,7 +7,8 @@ import (
 )
 
 func GetWords() []string {
-	file, err := os.OpenFile("textes/noms_monstres.txt", os.O_RDONLY, 0644)
+	name := os.Args[1]
+	file, err := os.OpenFile(name, os.O_RDONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
