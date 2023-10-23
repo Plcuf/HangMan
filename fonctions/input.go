@@ -1,6 +1,9 @@
 package fonctions
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func Scan() string {
 	answer := ""
@@ -16,7 +19,7 @@ func Scan() string {
 		if len(answer) > 1 {
 			return answer
 		} else {
-			return answer
+			return strings.ToLower(answer)
 		}
 	} else {
 		return Scan()
