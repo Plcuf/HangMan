@@ -19,7 +19,6 @@ func Scan() string {
 		if len(answer) > 1 {
 			return answer
 		} else {
-			fmt.Println("test")
 			return strings.ToLower(answer)
 		}
 	} else {
