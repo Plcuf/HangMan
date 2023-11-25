@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Hangman/fonctions"
+	"HangMan/fonctions"
 	"fmt"
 	"math/rand"
 	"strings"
