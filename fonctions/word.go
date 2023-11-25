@@ -6,8 +6,7 @@ import (
 	"os"
 )
 
-func GetWords() []string {
-	name := os.Args[1]
+func GetWords(name string) []string {
 	file, err := os.OpenFile(name, os.O_RDONLY, 0644)
 	if err != nil {
 		panic(err)

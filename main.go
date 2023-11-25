@@ -14,7 +14,7 @@ func main() {
 
 func game() {
 	compteur := 10
-	brokenword := fonctions.GetWord(fonctions.GetWords())
+	brokenword := fonctions.GetWord(fonctions.GetWords("textes/noms_monstres.txt"))
 	word := ""
 	alreadysaid := []string{}
 
