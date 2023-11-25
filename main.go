@@ -1,11 +1,12 @@
 package main
 
 import (
-	"HangMan/fonctions"
 	"fmt"
 	"math/rand"
 	"strings"
 	"time"
+
+	"github.com/Plcuf/HangMan/fonctions"
 )
 
 func main() {
